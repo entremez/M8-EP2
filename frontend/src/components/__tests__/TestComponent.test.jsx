@@ -14,7 +14,7 @@ afterEach(() => {
 test('muestra mensaje del backend si la respuesta es correcta', async () => {
   global.fetch.mockResolvedValueOnce({
     ok: true,
-    text: async () => 'test'
+    text: async () => 'Hola desde el backend'
   });
 
   render(<TestComponent />);
