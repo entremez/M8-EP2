@@ -3,12 +3,22 @@ name: CI/CD Pipeline
 on: [push]
 
 jobs:
-  test:
+  backend:
     runs-on: ubuntu-latest
     steps:
       - name: Clonar el repositorio
         uses: actions/checkout@v2
       - name: Instalar dependencias
+        working-directory: ./backend
         run: npm install
-      - name: Ejecutar tests
+  frontend:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Clonar el repositorio
+        uses: actions/checkout@v2
+      - name: Instalar dependencias
+        working-directory: ./frontend
+        run: npm install
+      - name: Ejecutar pruebas unitarias
+        working-directory: ./frontend
         run: npm test
