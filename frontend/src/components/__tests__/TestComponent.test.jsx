@@ -14,12 +14,12 @@ afterEach(() => {
 test('muestra mensaje del backend si la respuesta es correcta', async () => {
   global.fetch.mockResolvedValueOnce({
     ok: true,
-    text: async () => 'Hola desde el backend'
+    text: async () => 'Bienvenido al sistema médico'
   });
 
   render(<TestComponent />);
   
-  const mensaje = await waitFor(() => screen.getByText('Hola desde el backend'));
+  const mensaje = await waitFor(() => screen.getByText('Bienvenido al sistema médico'));
   expect(mensaje).toBeInTheDocument();
 });
 

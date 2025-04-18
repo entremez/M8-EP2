@@ -1,15 +1,13 @@
-import { useEffect, useState } from "react";
+import SpecialtyList from "./components/SpecialtyList";
+
 function App() {
-  const [message, setMessage] = useState("");
-  useEffect(() => {
-    fetch("http://localhost:5000")
-      .then((res) => res.text())
-      .then((data) => setMessage(data));
-  }, []);
   return (
     <div>
-      <h1>React + Node.js con Docker 🚀</h1>
-      <p>{message}</p>
+      <h1>Bienvenido al sistema médico</h1>
+      <div className="App">
+        <h2>Especialidades</h2>
+        <SpecialtyList />
+      </div>
     </div>
   );
 }

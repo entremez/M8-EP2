@@ -5,6 +5,7 @@ WORKDIR /app
 # 3. Copiar los archivos del backend
 COPY package.json ./
 COPY server.js ./
+COPY specialty.json ./
 # 4. Instalar dependencias
 RUN npm install
 # 5. Exponer el puerto
